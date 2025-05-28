@@ -1,7 +1,8 @@
 const { kafka } = require("./client");
+const group = process.argv[2] || "user-1";
 
 async function init() {
-   const consumer = kafka.consumer({ groupId: "user-1" });
+   const consumer = kafka.consumer({ groupId: group });
    
    try {
       console.log("Connecting Consumer...");
